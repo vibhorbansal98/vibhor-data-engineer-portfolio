@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import SectionHeading from './SectionHeading';
-import { FiExternalLink, FiGithub, FiStar } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiStar, FiLock } from 'react-icons/fi';
 
 const projects = [
   {
@@ -13,17 +13,17 @@ const projects = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'AI/ML'],
     impact: 'Streamlines resume creation with AI-powered content suggestions and professional templates',
     featured: true,
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/vibhorbansal98/ai-resume-builder',
+    demo: 'https://ai-resume-builder-vibhor.vercel.app/',
   },
   {
     title: 'Real-Time CDC Pipeline',
     description:
       'End-to-end Change Data Capture pipeline processing 200GB daily from PostgreSQL to Snowflake. Uses Airbyte for ingestion and Airflow for orchestration, enabling real-time analytics.',
     tech: ['Snowflake', 'Airbyte', 'Airflow', 'PostgreSQL', 'Python'],
-    impact: 'Enables real-time analytics for 50+ business users with automated data sync',
+    impact: 'Enables real-time analytics for 50+ downstream teams with automated data sync',
     featured: false,
-    github: '#',
+    internal: true,
   },
   {
     title: 'Kafka Streaming Microservice',
@@ -32,7 +32,7 @@ const projects = [
     tech: ['Java', 'Spring Boot', 'Kafka', 'Snowflake', 'Docker'],
     impact: '99.9% uptime, 30% cost reduction through optimized batch sizing',
     featured: false,
-    github: '#',
+    internal: true,
   },
   {
     title: 'AWS Trading Data ETL',
@@ -41,7 +41,7 @@ const projects = [
     tech: ['AWS Lambda', 'S3', 'Glue', 'Athena', 'CloudWatch'],
     impact: '90% reduction in manual work through automated daily extraction',
     featured: false,
-    github: '#',
+    internal: true,
   },
   {
     title: 'Media Data Lake (Medallion)',
@@ -50,16 +50,16 @@ const projects = [
     tech: ['PySpark', 'Delta Lake', 'Medallion Architecture', 'Data Quality'],
     impact: 'Analytics-ready Gold layer for cross-domain media data analysis',
     featured: false,
-    github: '#',
+    internal: true,
   },
   {
     title: 'Azure Healthcare Pipeline',
     description:
-      'ADF pipeline ingesting CSV files into ADLS, converting to Parquet, and transforming in Databricks with event-based triggers and SCD logic.',
+      'ADF pipeline ingesting data from multiple sources (APIs, source databases, ADLS storage) to ADLS, converting to Parquet, and transforming in Databricks with event-based triggers and SCD logic.',
     tech: ['Azure ADF', 'Databricks', 'ADLS Gen2', 'Delta Lake', 'Parquet'],
     impact: 'Near real-time Gold layer updates for healthcare data with SCD logic',
     featured: false,
-    github: '#',
+    internal: true,
   },
 ];
 
@@ -118,9 +118,17 @@ export default function Projects() {
               </div>
 
               <div className="flex gap-3">
+                {proj.internal && (
+                  <span className="flex items-center gap-1.5 text-sm text-muted/70">
+                    <FiLock size={14} />
+                    Internal Project
+                  </span>
+                )}
                 {proj.github && (
                   <a
                     href={proj.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
                   >
                     <FiGithub size={16} /> GitHub
@@ -129,6 +137,8 @@ export default function Projects() {
                 {proj.demo && (
                   <a
                     href={proj.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-sm text-primary hover:text-primary-light transition-colors"
                   >
                     <FiExternalLink size={16} /> Live Demo

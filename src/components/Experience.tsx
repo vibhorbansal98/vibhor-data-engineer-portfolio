@@ -23,9 +23,9 @@ const experiences = [
     location: 'Noida',
     period: 'Mar 2022 – Dec 2025',
     highlights: [
-      'Architected an end-to-end <strong>CDC pipeline processing 200GB data daily</strong> from PostgreSQL to Snowflake using Airbyte + Airflow — enabling real-time analytics for 50+ business users.',
+      'Architected an end-to-end <strong>CDC pipeline processing 200GB data daily</strong> from PostgreSQL to Snowflake using Airbyte + Airflow — enabling real-time analytics for 50+ downstream teams.',
       'Developed a Java Spring Boot microservice handling <strong>100K+ Kafka messages/hour</strong>, achieving <strong>99.9% uptime</strong> and reducing data processing costs by <strong>30%</strong>.',
-      'Built ADF pipelines for <strong>healthcare data</strong> — ingesting CSV to ADLS, converting to Parquet, and transforming in Databricks (Bronze → Silver → Gold) as Delta tables.',
+      'Built ADF pipelines for <strong>healthcare data</strong> — ingesting data from multiple sources (APIs, source databases, ADLS storage) to ADLS, converting to Parquet, and transforming in Databricks (Bronze → Silver → Gold) as Delta tables.',
       'Led migration from <strong>Jenkins to Argo CD</strong>, saving 15 hours/month in production deployment effort.',
       'Managed 10+ domains with <strong>90%+ code coverage</strong>, SonarQube gate 9, and zero critical vulnerabilities.',
     ],

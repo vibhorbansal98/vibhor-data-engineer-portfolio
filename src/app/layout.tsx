@@ -29,6 +29,12 @@ export const metadata: Metadata = {
     "ETL",
     "Portfolio",
   ],
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
