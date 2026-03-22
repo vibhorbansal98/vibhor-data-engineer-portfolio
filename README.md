@@ -4,7 +4,7 @@ A modern, premium personal portfolio website built for a Data Engineer. Features
 
 Built entirely using **prompt engineering** with **Antigravity (Google DeepMind's AI coding assistant)** and **Claude**.
 
-> **Live Demo:** _Coming soon on Vercel_
+> **Live Demo:** https://vibhor-data-engineer-portfolio.vercel.app/
 
 ---
 
